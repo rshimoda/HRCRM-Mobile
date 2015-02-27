@@ -44,4 +44,9 @@ public class MainScreen extends ActionBarActivity {
         startActivity(intent);
     }
 
+    public void onLogo(View view) {
+        Intent intent = new Intent(MainScreen.this, LoginScreen.class);
+        startActivity(intent);
+    }
+
 }

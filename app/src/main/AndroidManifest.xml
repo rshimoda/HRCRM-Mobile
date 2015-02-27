@@ -35,7 +35,7 @@
             android:parentActivityName=".TaskTypeScreen" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.eisgroup.hrcrm.TaskTypeScreen" />
+                android:value=".TaskTypeScreen" />
         </activity>
         <activity
             android:name=".RecruitmentScreen"
@@ -43,7 +43,7 @@
             android:parentActivityName=".TaskTypeScreen" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.eisgroup.hrcrm.TaskTypeScreen" />
+                android:value=".TaskTypeScreen" />
         </activity>
         <activity
             android:name=".CandidatesScreen"
@@ -51,7 +51,7 @@
             android:parentActivityName=".TaskTypeScreen" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.eisgroup.hrcrm.TaskTypeScreen" />
+                android:value=".TaskTypeScreen" />
         </activity>
         <activity
             android:name=".MarketingScreen"
@@ -59,7 +59,7 @@
             android:parentActivityName=".TaskTypeScreen" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.eisgroup.hrcrm.TaskTypeScreen" />
+                android:value=".TaskTypeScreen" />
         </activity>
         <activity
             android:name=".PerformanceScreen"
@@ -69,6 +69,14 @@
             android:name=".LoginScreen"
             android:label="@string/title_activity_login_screen"
             android:windowSoftInputMode="adjustResize|stateVisible" >
+        </activity>
+        <activity
+            android:name=".TaskTypeScreen"
+            android:label="@string/title_activity_task_type_screen"
+            android:parentActivityName=".MainScreen" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.eisgroup.hrcrm.MainScreen" />
         </activity>
     </application>
 
