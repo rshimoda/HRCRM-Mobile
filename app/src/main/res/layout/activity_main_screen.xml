@@ -23,15 +23,15 @@
         android:src="@drawable/ic_launcher"
         android:longClickable="true"
         android:clickable="false"
+        android:onClick="onLogo"
         android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:onClick="onLogo" />
+        android:layout_alignEnd="@+id/tableLayout" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="EIS Group ©"
+        android:text="EIS Group™"
         android:id="@+id/textView2"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true" />
@@ -44,6 +44,15 @@
         android:background="@color/background_material_light"
         android:layout_alignParentTop="true"
         android:layout_alignParentStart="true"
-        android:onClick="onClick" />
+        android:onClick="onClick"
+        android:layout_alignEnd="@+id/checkBox" />
+
+    <TableLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_below="@+id/checkBox"
+        android:layout_alignParentStart="true"
+        android:layout_above="@+id/textView2"
+        android:id="@+id/tableLayout"></TableLayout>
 
 </RelativeLayout>
