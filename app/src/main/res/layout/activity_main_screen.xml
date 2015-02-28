@@ -25,7 +25,8 @@
         android:clickable="false"
         android:onClick="onLogo"
         android:layout_alignParentTop="true"
-        android:layout_alignEnd="@+id/tableLayout" />
+        android:layout_alignParentEnd="true"
+        android:background="@color/background_material_light" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -42,17 +43,25 @@
         android:id="@+id/imageButton3"
         android:src="@drawable/cnt_button"
         android:background="@color/background_material_light"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentStart="true"
         android:onClick="onClick"
-        android:layout_alignEnd="@+id/checkBox" />
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Log In"
+        android:id="@+id/textView8"
+        android:textAlignment="center"
+        android:layout_below="@+id/imageButton2"
+        android:layout_alignEnd="@+id/imageButton2"
+        android:layout_alignStart="@+id/imageButton2" />
 
     <TableLayout
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
-        android:layout_below="@+id/checkBox"
         android:layout_alignParentStart="true"
         android:layout_above="@+id/textView2"
-        android:id="@+id/tableLayout"></TableLayout>
+        android:layout_below="@+id/checkBox"></TableLayout>
 
 </RelativeLayout>
