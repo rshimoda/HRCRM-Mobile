@@ -11,7 +11,7 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
 
-public class MainScreen extends ActionBarActivity implements AdapterView.OnItemSelectedListener {
+public class MainScreen extends ActionBarActivity implements AdapterView.OnItemSelectedListener, AdapterView.OnItemClickListener {
 
     ListView listView;
 
@@ -20,13 +20,25 @@ public class MainScreen extends ActionBarActivity implements AdapterView.OnItemS
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_screen);
-try {
-    ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
+        try {
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
             android.R.layout.simple_list_item_1, Tasks.tasks);
 
-    listView = (ListView) findViewById(R.id.listView);
-    listView.setAdapter(adapter);
-} catch (Exception e) { }
+        listView = (ListView) findViewById(R.id.listView);
+        listView.setChoiceMode(ListView.CHOICE_MODE_SINGLE);
+        listView.setAdapter(adapter);
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+        @Override
+        public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+            Tasks.currentTaskSummary.setLength(0);
+            Tasks.currentTaskSummary.append(parent.getSelectedItem());
+            System.out.println(Tasks.currentTaskSummary.toString());
+
+            Intent intent = new Intent(MainScreen.this, TaskViewScreen.class);
+            startActivity(intent); } });
+        } catch (Exception e) {
+            //NOP
+        }
     }
 
 
@@ -69,6 +81,11 @@ try {
 
     @Override
     public void onNothingSelected(AdapterView<?> parent) {
+
+    }
+
+    @Override
+    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
     }
 }

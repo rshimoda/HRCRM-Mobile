@@ -62,6 +62,14 @@
             android:label="@string/title_activity_login_screen"
             android:windowSoftInputMode="adjustResize|stateVisible" >
         </activity>
+        <activity
+            android:name=".TaskViewScreen"
+            android:label="@string/title_activity_task_view_screen"
+            android:parentActivityName=".MainScreen" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.eisgroup.hrcrm.MainScreen" />
+        </activity>
     </application>
 
 </manifest>

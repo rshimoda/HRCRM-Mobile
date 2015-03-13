@@ -33,4 +33,5 @@
     <string-array name="tasks">
         <item>No Tasks Created</item>
     </string-array>
+    <string name="title_activity_task_view_screen">TaskViewScreen</string>
 </resources>
