@@ -1,0 +1,17 @@
+<resources>
+
+    <string name="action_settings">Настройки</string>
+    <string name="action_sign_in">Войти/Зарегистрироваться</string>
+    <string name="action_sign_in_short">Войти</string>
+    <string name="error_field_required">Это поле не должно быть пустым</string>
+    <string name="error_incorrect_password">Пароль некорректен</string>
+    <string name="error_invalid_email">Email адрес некорректен</string>
+    <string name="error_invalid_password">Пароль слишком короткий</string>
+    <string name="hello_world">Хей!</string>
+    <string name="prompt_password">Пароль (необязательно)</string>
+    <string name="title_activity_login_screen">Вход</string>
+    <string name="title_activity_task_type_screen">Создание Задачи</string>
+    <string name="title_activity_task_type_selection">Создание Задачи</string>
+    <string name="title_activity_task_view_screen">Просмотр Задачи</string>
+
+</resources>
