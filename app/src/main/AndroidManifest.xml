@@ -23,19 +23,11 @@
         </activity>
         <activity
             android:name=".TaskTypeScreen"
-            android:label="@string/title_activity_task_type_screen"
+            android:label="Task Creation"
             android:parentActivityName=".MainScreen" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.eisgroup.hrcrm.MainScreen" />
-        </activity>
-        <activity
-            android:name=".ODSInternalScreen"
-            android:label="@string/title_activity_odsinternal_screen"
-            android:parentActivityName=".TaskTypeScreen" >
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value=".TaskTypeScreen" />
         </activity>
         <activity
             android:name=".RecruitmentScreen"
@@ -69,14 +61,6 @@
             android:name=".LoginScreen"
             android:label="@string/title_activity_login_screen"
             android:windowSoftInputMode="adjustResize|stateVisible" >
-        </activity>
-        <activity
-            android:name=".TaskTypeScreen"
-            android:label="@string/title_activity_task_type_screen"
-            android:parentActivityName=".MainScreen" >
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.eisgroup.hrcrm.MainScreen" />
         </activity>
     </application>
 

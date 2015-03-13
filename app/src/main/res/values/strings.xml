@@ -17,4 +17,20 @@
         <item>Performance</item>
         <item>Recruitment</item>
     </string-array>
+    <string-array name="priority_array">
+        <item>Critical</item>
+        <item>Major</item>
+        <item>Minor</item>
+        <item>Blocker</item>
+    </string-array>
+    <string-array name="complexity_array">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+    </string-array>
+    <string-array name="tasks">
+        <item>No Tasks Created</item>
+    </string-array>
 </resources>
