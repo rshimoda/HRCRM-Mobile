@@ -30,7 +30,7 @@ public class MainScreen extends Activity implements AdapterView.OnItemSelectedLi
     @Override
     protected void onStart() {
         super.onStart();
-        tasks.add(new Task("There are no tasks created"));
+        if(tasks.isEmpty()) tasks.add(new Task("There are no tasks created"));
     }
 
     @Override

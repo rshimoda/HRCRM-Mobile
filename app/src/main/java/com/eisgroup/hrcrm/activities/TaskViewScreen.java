@@ -13,7 +13,7 @@ import com.eisgroup.hrcrm.TaskList;
 
 public class TaskViewScreen extends Activity {
 
-    TextView summary;
+    TextView summary, type, priority, dueDate, complexity, description;
     Task task = TaskList.tasks.get(TaskList.currentId);
 
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,6 +22,21 @@ public class TaskViewScreen extends Activity {
 
         summary = (TextView) findViewById(R.id.TaskSummary);
         summary.setText(task.getSummary());
+
+        type = (TextView) findViewById(R.id.taskTypeField);
+        type.setText(task.getType());
+
+        priority = (TextView) findViewById(R.id.priorityField);
+        priority.setText(task.getPriority());
+
+        dueDate = (TextView) findViewById(R.id.dueDateField);
+        dueDate.setText(task.getDueDate());
+
+        complexity = (TextView) findViewById(R.id.complexityField);
+        complexity.setText(task.getComplexity());
+
+        description = (TextView) findViewById(R.id.descriptionField);
+        description.setText(task.getDescription());
     }
 
 
