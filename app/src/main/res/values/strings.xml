@@ -5,11 +5,14 @@
     <string name="action_settings">Settings</string>
     <string name="title_activity_task_type_selection">Task Type Selection</string>
     <string name="title_activity_task_type_screen">Task Type Screen</string>
-    <string name="title_activity_odsinternal_screen">ODS Internal Screen</string>
-    <string name="title_activity_recruitment_screen">Recruitment Screen</string>
-    <string name="title_activity_candidates_screen">Candidates Screen</string>
-    <string name="title_activity_marketing_screen">Marketing Screen</string>
-    <string name="title_activity_performance_screen">Performance Screen</string>
+    <string name="show_only_active_tasks">Show Only Active Tasks</string>
+    <string name="log_in">Log In</string>
+    <string name="log_in_or_register">> Log in Or Register </string>
+    <string name="select_task_type">Task Type: </string>
+    <string name="priority">Priority: </string>
+    <string name="complexity">Complexity: </string>
+    <string name="due_date">Due Date: </string>
+
     <string-array name="tasks_array">
         <item>Candidates</item>
         <item>Marketing</item>

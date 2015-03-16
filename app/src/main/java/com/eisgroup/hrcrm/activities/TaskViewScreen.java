@@ -1,24 +1,34 @@
-package com.eisgroup.hrcrm;
+package com.eisgroup.hrcrm.activities;
 
-import android.support.v7.app.ActionBarActivity;
+import android.app.Activity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.TextView;
+
+import com.eisgroup.hrcrm.R;
+import com.eisgroup.hrcrm.Task;
+import com.eisgroup.hrcrm.TaskList;
 
 
-public class CandidatesScreen extends ActionBarActivity {
+public class TaskViewScreen extends Activity {
 
-    @Override
+    TextView summary;
+    Task task = TaskList.tasks.get(TaskList.currentId);
+
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_candidates_screen);
+        setContentView(R.layout.activity_task_view_screen);
+
+        summary = (TextView) findViewById(R.id.TaskSummary);
+        summary.setText(task.getSummary());
     }
 
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_candidates_screen, menu);
+        getMenuInflater().inflate(R.menu.menu_task_view_screen, menu);
         return true;
     }
 

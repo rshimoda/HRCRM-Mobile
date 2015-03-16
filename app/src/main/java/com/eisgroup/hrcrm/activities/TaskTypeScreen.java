@@ -1,29 +1,28 @@
-package com.eisgroup.hrcrm;
+package com.eisgroup.hrcrm.activities;
 
+import android.app.Activity;
 import android.content.Intent;
-import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
-import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
-import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.Spinner;
-import android.widget.TextView;
 
-import java.util.Date;
+import com.eisgroup.hrcrm.R;
+import com.eisgroup.hrcrm.Task;
+import com.eisgroup.hrcrm.TaskList;
 
 
-public class TaskTypeScreen extends ActionBarActivity {
+public class TaskTypeScreen extends Activity {
 
-    String taskName,
-            taskType, taskDescription ,taskDueDate, taskPrior;
-    int taskCompl;
+    String taskName, taskType, taskDescription ,taskDueDate, taskPrior, taskCompl;
     Spinner spinner, spinnerP, spinnerC;
     EditText summary, description, date;
+    ImageButton imageButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,7 +46,7 @@ public class TaskTypeScreen extends ActionBarActivity {
         spinnerC.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                taskCompl = Integer.valueOf(parent.getItemAtPosition(position).toString());
+                taskCompl = parent.getItemAtPosition(position).toString();
             }
 
             @Override
@@ -83,25 +82,11 @@ public class TaskTypeScreen extends ActionBarActivity {
         spinnerC.setAdapter(adapterC);
 
         summary = (EditText) findViewById(R.id.summary);
-        //description = (EditText) findViewById(R.id.description);
-        //date = (EditText) findViewById(R.id.dateInput);
+        date = (EditText) findViewById(R.id.dateInput);
+        description = (EditText) findViewById(R.id.description);
 
+        imageButton = (ImageButton) findViewById(R.id.nextButton);
 
-        /*
-        date.setOnEditorActionListener(new TextView.OnEditorActionListener() {
-            @Override
-            public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
-                taskDueDate = v.getText().toString();
-                return true;
-            }
-        });
-        summary.setOnEditorActionListener(new TextView.OnEditorActionListener() {
-            @Override
-            public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
-                taskDescription = v.getText().toString();
-                return true;
-            }
-        });*/
     }
 
 
@@ -128,13 +113,18 @@ public class TaskTypeScreen extends ActionBarActivity {
     }
 
     public void onClick(View view) {
+        TaskList.wasCreated = true;
+
         taskName = summary.getText().toString();
 
-        if (! Tasks.isInitiated) { Tasks.tasks.remove(0); Tasks.isInitiated = true; }
-        Tasks.tasks.add(0, taskName);
+        TaskList.tasks.add(0, new Task(TaskList.tasks.size(), summary.getText().toString(), taskType, taskPrior, taskCompl, date.getText().toString(), description.getText().toString()));
 
         Intent intent = new Intent(TaskTypeScreen.this, MainScreen.class);
         startActivity(intent);
+    }
+
+    public void setNextVisible() {
+            imageButton.setVisibility(View.VISIBLE);
     }
 
 

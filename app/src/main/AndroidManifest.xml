@@ -7,13 +7,21 @@
     <uses-permission android:name="android.permission.READ_PROFILE" />
     <uses-permission android:name="android.permission.READ_CONTACTS" />
 
+    <!-- To access Google+ APIs: -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <!--
+ To retrieve OAuth 2.0 tokens or invalidate tokens to disconnect a user. This disconnect
+     option is required to comply with the Google+ Sign-In developer policies
+    -->
+    <uses-permission android:name="android.permission.USE_CREDENTIALS" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
-        android:theme="@style/AppTheme" >
+        android:theme="@android:style/Theme.Material.Light" >
         <activity
-            android:name=".MainScreen"
+            android:name=".activities.MainScreen"
             android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -22,53 +30,25 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".TaskTypeScreen"
+            android:name=".activities.TaskTypeScreen"
             android:label="Task Creation"
-            android:parentActivityName=".MainScreen" >
+            android:parentActivityName=".activities.MainScreen" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.eisgroup.hrcrm.MainScreen" />
+                android:value=".activities.MainScreen" />
         </activity>
         <activity
-            android:name=".RecruitmentScreen"
-            android:label="@string/title_activity_recruitment_screen"
-            android:parentActivityName=".TaskTypeScreen" >
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value=".TaskTypeScreen" />
-        </activity>
-        <activity
-            android:name=".CandidatesScreen"
-            android:label="@string/title_activity_candidates_screen"
-            android:parentActivityName=".TaskTypeScreen" >
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value=".TaskTypeScreen" />
-        </activity>
-        <activity
-            android:name=".MarketingScreen"
-            android:label="@string/title_activity_marketing_screen"
-            android:parentActivityName=".TaskTypeScreen" >
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value=".TaskTypeScreen" />
-        </activity>
-        <activity
-            android:name=".PerformanceScreen"
-            android:label="@string/title_activity_performance_screen" >
-        </activity>
-        <activity
-            android:name=".LoginScreen"
+            android:name=".activities.LoginScreen"
             android:label="@string/title_activity_login_screen"
             android:windowSoftInputMode="adjustResize|stateVisible" >
         </activity>
         <activity
-            android:name=".TaskViewScreen"
-            android:label="@string/title_activity_task_view_screen"
-            android:parentActivityName=".MainScreen" >
+            android:name=".activities.TaskViewScreen"
+            android:label="Task View"
+            android:parentActivityName=".activities.MainScreen" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.eisgroup.hrcrm.MainScreen" />
+                android:value=".activities.MainScreen" />
         </activity>
     </application>
 
