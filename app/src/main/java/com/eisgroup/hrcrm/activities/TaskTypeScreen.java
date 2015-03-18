@@ -10,6 +10,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.RelativeLayout;
 import android.widget.Spinner;
 
 import com.eisgroup.hrcrm.R;
@@ -23,6 +24,7 @@ public class TaskTypeScreen extends Activity {
     Spinner spinner, spinnerP, spinnerC;
     EditText summary, description, date;
     ImageButton imageButton;
+    RelativeLayout relativeLayout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,6 +38,10 @@ public class TaskTypeScreen extends Activity {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 taskType = parent.getItemAtPosition(position).toString();
+                relativeLayout = (RelativeLayout) findViewById(R.id.relativeLayout);
+                if (taskType.equals("Recruitment") || taskType.equals("Candidates")) {
+                    relativeLayout.setVisibility(View.VISIBLE);
+                } else relativeLayout.setVisibility(View.GONE);
             }
 
             @Override

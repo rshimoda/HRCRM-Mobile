@@ -14,9 +14,9 @@
     <string name="due_date">Due Date: </string>
 
     <string-array name="tasks_array">
+        <item>ODS Internal</item>
         <item>Candidates</item>
         <item>Marketing</item>
-        <item>ODS Internal</item>
         <item>Performance</item>
         <item>Recruitment</item>
     </string-array>
@@ -36,5 +36,5 @@
     <string-array name="tasks">
         <item>No Tasks Created</item>
     </string-array>
-    <string name="title_activity_task_view_screen">TaskViewScreen</string>
+    <string name="title_activity_task_view_screen">Task View</string>
 </resources>

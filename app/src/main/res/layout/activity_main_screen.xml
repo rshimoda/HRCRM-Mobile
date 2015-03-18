@@ -18,7 +18,8 @@
         android:checked="true"
         android:layout_below="@+id/imageButton3"
         android:layout_alignParentStart="true"
-        android:textColor="#000000"
+        android:textColor="@android:color/black"
+        android:theme="@android:style/Theme.DeviceDefault"
         android:longClickable="true" />
 
     <ImageButton

@@ -7,7 +7,6 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.ImageButton;
 import android.widget.ListView;
 
@@ -19,6 +18,7 @@ import com.eisgroup.hrcrm.adapter.TaskAdapter;
 import java.util.ArrayList;
 import java.util.List;
 
+import java.sql.*;
 
 public class MainScreen extends Activity implements AdapterView.OnItemSelectedListener, AdapterView.OnItemClickListener {
 
@@ -26,6 +26,10 @@ public class MainScreen extends Activity implements AdapterView.OnItemSelectedLi
     List<Task> tasks = new ArrayList<>();
 
     ImageButton create, logIn;
+
+    Connection connection = null;
+    Statement statement = null;
+    ResultSet resultSet;
 
     @Override
     protected void onStart() {
