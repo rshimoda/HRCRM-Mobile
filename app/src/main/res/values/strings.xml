@@ -33,8 +33,32 @@
         <item>4</item>
         <item>5</item>
     </string-array>
+    <string-array name="project_array">
+        <item> </item>
+    </string-array>
+    <string-array name="position_array">
+        <item>PM</item>
+        <item>BA</item>
+        <item>HR</item>
+    </string-array>
+    <string-array name="level_array">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
+    </string-array>
     <string-array name="tasks">
         <item>No Tasks Created</item>
     </string-array>
     <string name="title_activity_task_view_screen">Task View</string>
+    <string name="title_activity_admin_screen">AdminScreen</string>
+
+
+    <string name="title_section1">Section 1</string>
+    <string name="title_section2">Section 2</string>
+    <string name="title_section3">Section 3</string>
 </resources>

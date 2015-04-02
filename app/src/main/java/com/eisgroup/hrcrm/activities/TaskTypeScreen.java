@@ -21,7 +21,7 @@ import com.eisgroup.hrcrm.TaskList;
 public class TaskTypeScreen extends Activity {
 
     String taskName, taskType, taskDescription ,taskDueDate, taskPrior, taskCompl;
-    Spinner spinner, spinnerP, spinnerC;
+    Spinner spinner, spinnerP, spinnerC, spinnerPro, spinnerPos,  spinnerL;
     EditText summary, description, date;
     ImageButton imageButton;
     RelativeLayout relativeLayout;
@@ -34,6 +34,9 @@ public class TaskTypeScreen extends Activity {
         spinner = (Spinner) findViewById(R.id.spinner);
         spinnerC = (Spinner) findViewById(R.id.complexitySpinner);
         spinnerP = (Spinner) findViewById(R.id.prioritySpinner);
+        spinnerPro = (Spinner) findViewById(R.id.projectSpinner);
+        spinnerPos = (Spinner) findViewById(R.id.positionSpinner);
+        spinnerL = (Spinner) findViewById(R.id.levelSpinner);
         spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
@@ -73,19 +76,68 @@ public class TaskTypeScreen extends Activity {
             }
         });
 
+        spinnerPro.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                //NOP
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
+
+        spinnerPos.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                //NOP
+
+
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
+
+        spinnerL.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                //NOP
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
+
         // Create an ArrayAdapter using the string array and a default spinner layout
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
                 R.array.tasks_array, android.R.layout.simple_spinner_item);
         ArrayAdapter<CharSequence> adapterC = ArrayAdapter.createFromResource(this, R.array.complexity_array, android.R.layout.simple_spinner_item);
         ArrayAdapter<CharSequence> adapterP = ArrayAdapter.createFromResource(this, R.array.priority_array, android.R.layout.simple_spinner_item);
+        ArrayAdapter<CharSequence> adapterPro = ArrayAdapter.createFromResource(this, R.array.project_array, android.R.layout.simple_spinner_item);
+        ArrayAdapter<CharSequence> adapterPos = ArrayAdapter.createFromResource(this, R.array.position_array, android.R.layout.simple_spinner_item);
+        ArrayAdapter<CharSequence> adapterL = ArrayAdapter.createFromResource(this, R.array.level_array, android.R.layout.simple_spinner_item);
+
         // Specify the layout to use when the list of choices appears
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         adapterC.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         adapterP.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        adapterPro.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        adapterPos.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        adapterL.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+
         // Apply the adapter to the spinner
         spinner.setAdapter(adapter);
         spinnerP.setAdapter(adapterP);
         spinnerC.setAdapter(adapterC);
+        spinnerPro.setAdapter(adapterPro);
+        spinnerPos.setAdapter(adapterPos);
+        spinnerL.setAdapter(adapterL);
 
         summary = (EditText) findViewById(R.id.summary);
         date = (EditText) findViewById(R.id.dateInput);
@@ -93,29 +145,6 @@ public class TaskTypeScreen extends Activity {
 
         imageButton = (ImageButton) findViewById(R.id.nextButton);
 
-    }
-
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_task_type_screen, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        }
-
-        return super.onOptionsItemSelected(item);
     }
 
     public void onClick(View view) {

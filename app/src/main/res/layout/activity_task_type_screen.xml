@@ -5,7 +5,6 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     android:paddingBottom="@dimen/activity_vertical_margin"
     tools:context="com.eisgroup.hrcrm.activities.TaskTypeScreen">
-
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -17,6 +16,12 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true" />
 
+    <ScrollView android:id="@+id/task_type_form" android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/summary"
+        android:layout_above="@+id/nextButton">
+        <RelativeLayout android:id="@+id/fields_task_type_form" android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:orientation="vertical">
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -24,7 +29,6 @@
         android:text="@string/select_task_type"
         android:layout_marginTop="10dp"
         android:id="@+id/textView"
-        android:layout_below="@+id/summary"
         android:layout_alignEnd="@+id/complexityText" />
 
     <Spinner
@@ -34,9 +38,8 @@
         android:entries="@array/tasks_array"
         android:spinnerMode="dropdown"
         android:layout_alignTop="@+id/textView"
-        android:layout_alignStart="@+id/nextButton"
         android:layout_alignBottom="@+id/textView"
-        android:layout_alignEnd="@+id/nextButton" />
+        android:layout_toEndOf="@+id/complexityText" />
 
 
     <TextView
@@ -76,9 +79,9 @@
         android:id="@+id/complexitySpinner"
         android:dropDownWidth="wrap_content"
         android:layout_alignTop="@+id/complexityText"
-        android:layout_alignStart="@+id/nextButton"
         android:layout_alignEnd="@+id/spinner"
-        android:layout_alignBottom="@+id/complexityText" />
+        android:layout_alignBottom="@+id/complexityText"
+        android:layout_toEndOf="@+id/textView" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -101,8 +104,75 @@
         android:layout_toEndOf="@+id/description"
         android:layout_alignStart="@+id/prioritySpinner" />
 
+            <RelativeLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:visibility="visible"
+                android:layout_below="@+id/priorityText"
+                android:id="@+id/relativeLayout"
+                android:layout_alignEnd="@+id/prioritySpinner">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text="Project: "
+                    android:id="@+id/projectText"
+                    android:layout_marginTop="17dp"
+                    android:layout_marginStart="27dp"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentStart="true" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text="Position:"
+                    android:layout_marginTop="17dp"
+                    android:id="@+id/positionText"
+                    android:layout_below="@+id/projectText"
+                    android:layout_alignEnd="@+id/projectText" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text="Level:"
+                    android:layout_marginTop="17dp"
+                    android:id="@+id/levelText"
+                    android:layout_below="@+id/positionText"
+                    android:layout_alignEnd="@+id/positionText" />
+
+                <Spinner
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/projectSpinner"
+                    android:layout_above="@+id/positionText"
+                    android:layout_alignTop="@+id/projectText"
+                    android:layout_alignParentEnd="true"
+                    android:layout_toEndOf="@+id/levelText" />
+
+                <Spinner
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/positionSpinner"
+                    android:layout_above="@+id/levelText"
+                    android:layout_alignTop="@+id/positionText"
+                    android:layout_alignParentEnd="true"
+                    android:layout_toEndOf="@+id/levelText" />
+
+                <Spinner
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/levelSpinner"
+                    android:layout_alignTop="@+id/levelText"
+                    android:layout_alignBottom="@+id/levelText"
+                    android:layout_alignParentEnd="true"
+                    android:layout_toEndOf="@+id/projectText" />
+            </RelativeLayout>
     <EditText
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/description"
         android:hint="Description"
@@ -110,6 +180,8 @@
         android:layout_below="@+id/dateInput"
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true" />
+    </RelativeLayout>
+    </ScrollView>
 
     <ImageButton
         android:layout_width="wrap_content"
@@ -122,45 +194,4 @@
         android:layout_centerHorizontal="true"
         android:clickable="true"
         android:longClickable="true" />
-
-    <RelativeLayout
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:visibility="gone"
-        android:layout_below="@+id/priorityText"
-        android:id="@+id/relativeLayout"
-        android:layout_alignEnd="@+id/description">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceMedium"
-            android:text="Project: "
-            android:id="@+id/projectText"
-            android:layout_marginTop="17dp"
-            android:layout_marginStart="27dp"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentStart="true" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceMedium"
-            android:text="Position:"
-            android:layout_marginTop="17dp"
-            android:id="@+id/positionText"
-            android:layout_below="@+id/projectText"
-            android:layout_alignEnd="@+id/projectText" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceMedium"
-            android:text="Level:"
-            android:layout_marginTop="17dp"
-            android:id="@+id/levelText"
-            android:layout_below="@+id/positionText"
-            android:layout_alignEnd="@+id/positionText" />
-    </RelativeLayout>
 </RelativeLayout>

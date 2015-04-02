@@ -25,7 +25,7 @@ public class MainScreen extends Activity implements AdapterView.OnItemSelectedLi
     ListView listView;
     List<Task> tasks = new ArrayList<>();
 
-    ImageButton create, logIn;
+    ImageButton create;
 
     Connection connection = null;
     Statement statement = null;
@@ -55,15 +55,6 @@ public class MainScreen extends Activity implements AdapterView.OnItemSelectedLi
                 startActivity(intent);
             }
         });
-
-        logIn = (ImageButton) findViewById(R.id.imageButton2);
-        logIn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(MainScreen.this, LoginScreen.class);
-                startActivity(intent);
-            }
-        });
     }
 
 
@@ -82,7 +73,9 @@ public class MainScreen extends Activity implements AdapterView.OnItemSelectedLi
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
+        if (id == R.id.action_admin) {
+            Intent intent = new Intent(MainScreen.this, LoginScreen.class);
+            startActivity(intent);
             return true;
         }
 

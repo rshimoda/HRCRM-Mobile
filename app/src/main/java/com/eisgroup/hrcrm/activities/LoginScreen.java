@@ -56,7 +56,7 @@ public class LoginScreen extends Activity implements LoaderCallbacks<Cursor> {
     private View mLoginFormView;
 
     public void onClick(View view) {
-        startActivity(new Intent(LoginScreen.this, MainScreen.class));
+
     }
 
     @Override
@@ -294,6 +294,7 @@ public class LoginScreen extends Activity implements LoaderCallbacks<Cursor> {
 
             if (success) {
                 finish();
+                startActivity(new Intent(LoginScreen.this, AdminScreen.class));
             } else {
                 mPasswordView.setError(getString(R.string.error_incorrect_password));
                 mPasswordView.requestFocus();

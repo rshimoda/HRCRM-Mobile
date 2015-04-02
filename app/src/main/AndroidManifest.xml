@@ -50,6 +50,10 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".activities.MainScreen" />
         </activity>
+        <activity
+            android:name=".activities.AdminScreen"
+            android:label="@string/title_activity_admin_screen" >
+        </activity>
     </application>
 
 </manifest>
